@@ -1,0 +1,11 @@
+As the name suggests. We need to observe something and notify for a certain change in what we are observing.
+Observable and Observer are two Interfaces. 
+
+Observable -(has a)> Observer
+
+Observable concrete class <(has a)- Observer Concrete class
+to know what to update(to get data of observable)
+
+Observable will hold a list of Observers which will be notified on data change.
+For the example we will have 2 Observers for email and phone notifications.
+And we will observe the stock of Iphone(Product in our system)
