@@ -7,7 +7,7 @@ package SOLID.liskovs_substitution;
 
 // Scalable, less buggy code
 
-interface Vehicle {
+interface VehicleFail {
     public void turnOnEngine();
 
     public void accelerate();
@@ -18,7 +18,7 @@ interface Vehicle {
 }
 
 // existing code
-class MotorCycle implements Vehicle {
+class MotorCycleFail implements VehicleFail {
     boolean engineState = false;
     int speed = 0;
 
@@ -41,7 +41,7 @@ class MotorCycle implements Vehicle {
 }
 
 // new code to implement
-class Bicycle implements Vehicle {
+class BicycleFail implements VehicleFail {
     int speed = 0;
 
     public void turnOnEngine() {
@@ -63,7 +63,7 @@ class Bicycle implements Vehicle {
 
 public class Fail {
     public static void main(String[] args) {
-        Vehicle vehicle1 = new MotorCycle();
+        VehicleFail vehicle1 = new MotorCycleFail();
         vehicle1.turnOnEngine();
         vehicle1.engineStatus();
         vehicle1.accelerate();
@@ -71,7 +71,7 @@ public class Fail {
         vehicle1.vehicleSpeed();
 
         // Can not be substituted
-        Vehicle vehicle2 = new Bicycle();
+        VehicleFail vehicle2 = new BicycleFail();
         // throws error
         vehicle2.turnOnEngine();
         vehicle2.engineStatus();

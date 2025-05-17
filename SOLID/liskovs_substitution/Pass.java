@@ -1,8 +1,19 @@
 package SOLID.liskovs_substitution;
 
-class Car implements Vehicle {
+interface Vehicle {
+    public void accelerate();
+
+    public void vehicleSpeed();
+}
+
+interface EngineVehicle extends Vehicle {
+    public void turnOnEngine();
+
+    public void engineStatus();
+}
+
+class MotorCycle implements EngineVehicle {
     boolean engineState = false;
-    boolean ACState = false;
     int speed = 0;
 
     public void turnOnEngine() {
@@ -10,7 +21,7 @@ class Car implements Vehicle {
     }
 
     public void accelerate() {
-        this.speed += 2;
+        this.speed += 10;
     }
 
     public void engineStatus() {
@@ -21,39 +32,35 @@ class Car implements Vehicle {
     public void vehicleSpeed() {
         System.out.println("Vehicle speed: " + this.speed);
     }
+}
 
-    public void turnOnAC() {
-        this.ACState = true;
+class Bicycle implements Vehicle {
+    int speed = 0;
+
+    public void accelerate() {
+        this.speed += 2;
     }
 
-    public void ACStatus() {
-        String status = (this.ACState) ? "On" : "OFF";
-        System.out.println("AC: " + status);
+    public void vehicleSpeed() {
+        System.out.println("Vehicle speed: " + this.speed);
     }
-
 }
 
 public class Pass {
     public static void main(String[] args) {
         Vehicle vehicle1 = new MotorCycle();
-        vehicle1.turnOnEngine();
-        vehicle1.engineStatus();
-        vehicle1.accelerate();
+        // these methods can only be called by EngineVehicle class
+        // vehicle1.turnOnEngine();
+        // vehicle1.engineStatus();
+
+        // So the code does not break for bicycle
         vehicle1.accelerate();
         vehicle1.vehicleSpeed();
 
         // Can be substituted
-        Vehicle vehicle2 = new Car();
-        vehicle2.turnOnEngine();
-        vehicle2.engineStatus();
+        Vehicle vehicle2 = new Bicycle();
         vehicle2.accelerate();
         vehicle2.accelerate();
         vehicle2.vehicleSpeed();
-
-        // Adds more functionality
-        Car bmw = new Car();
-        bmw.turnOnAC();
-        bmw.ACStatus();
-
     }
 }
