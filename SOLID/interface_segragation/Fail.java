@@ -1,7 +1,9 @@
 package SOLID.interface_segragation;
+
 import java.lang.Thread;
 
 // Interfaces should be such that, client should not need to implement unnecessary features they do not need
+// Removes Redundancy, simplifies code
 
 interface RestaurantEmployee {
 
@@ -10,11 +12,11 @@ interface RestaurantEmployee {
     public void cookFood();
 
     public void serveCustomers();
-    
+
 }
 
-class ChefFail implements RestaurantEmployee{
-    public void cookFood(){
+class ChefFail implements RestaurantEmployee {
+    public void cookFood() {
         System.out.println("Cooking");
         try {
             Thread.sleep(2000);
@@ -26,15 +28,16 @@ class ChefFail implements RestaurantEmployee{
     }
 
     // not needed
-    public void cleanDishes(){
-    
+    public void cleanDishes() {
+
     }
 
     // not needed
-    public void serveCustomers(){
+    public void serveCustomers() {
 
     }
 }
+
 public class Fail {
     public static void main(String[] args) {
         RestaurantEmployee chef = new ChefFail();

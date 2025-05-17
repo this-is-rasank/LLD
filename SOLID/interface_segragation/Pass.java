@@ -8,7 +8,7 @@ interface ChefInterface {
     public void cookFood();
 
     public void expertise();
-    
+
 }
 
 interface WaiterInterface {
@@ -16,16 +16,17 @@ interface WaiterInterface {
     public void takeOrder();
 
     public void serveOrder();
-    
+
 }
 
-class Chef implements ChefInterface{
+class Chef implements ChefInterface {
     String expertIn;
 
-    public Chef(String expertise){
+    public Chef(String expertise) {
         this.expertIn = expertise;
     }
-    public void cookFood(){
+
+    public void cookFood() {
         System.out.println("Cooking");
         try {
             Thread.sleep(2000);
@@ -36,7 +37,7 @@ class Chef implements ChefInterface{
 
     }
 
-    public void expertise(){
+    public void expertise() {
         System.out.println(this.expertIn);
     }
 }

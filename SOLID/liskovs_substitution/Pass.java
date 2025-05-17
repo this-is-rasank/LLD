@@ -1,34 +1,33 @@
 package SOLID.liskovs_substitution;
 
-
-class Car implements Vehicle{
+class Car implements Vehicle {
     boolean engineState = false;
     boolean ACState = false;
     int speed = 0;
 
-    public void turnOnEngine(){
+    public void turnOnEngine() {
         this.engineState = true;
     }
 
-    public void accelerate(){
+    public void accelerate() {
         this.speed += 2;
     }
 
-    public void engineStatus(){
-        String status = (this.engineState)?"On":"OFF";
+    public void engineStatus() {
+        String status = (this.engineState) ? "On" : "OFF";
         System.out.println("Engine Status: " + status);
     }
 
-    public void vehicleSpeed(){
+    public void vehicleSpeed() {
         System.out.println("Vehicle speed: " + this.speed);
     }
 
-    public void turnOnAC(){
+    public void turnOnAC() {
         this.ACState = true;
     }
 
-    public void ACStatus(){
-        String status = (this.ACState)?"On":"OFF";
+    public void ACStatus() {
+        String status = (this.ACState) ? "On" : "OFF";
         System.out.println("AC: " + status);
     }
 
@@ -42,7 +41,6 @@ public class Pass {
         vehicle1.accelerate();
         vehicle1.accelerate();
         vehicle1.vehicleSpeed();
-
 
         // Can be substituted
         Vehicle vehicle2 = new Car();
