@@ -1,5 +1,8 @@
 package SOLID.open_closed;
 
+// Open for Extention, Closed for Modification
+// Modification is Bug Prone, Extention makes code scalable for future use
+
 class Marker {
     String name;
     String color;

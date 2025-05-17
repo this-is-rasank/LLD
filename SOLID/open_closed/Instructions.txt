@@ -1,5 +1,0 @@
-Due to Dependency Imports
-Run with:
-
-javac SOLID/open_closed/*.java
-java SOLID.open_closed.Pass

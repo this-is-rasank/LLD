@@ -2,6 +2,9 @@ package SOLID.open_closed;
 
 import SOLID.open_closed.*;
 
+// Open for Extention, Closed for Modification
+// Modification is Bug Prone, Extention makes code scalable for future use
+
 interface InvoiceDao {
 
     // abstract methods in interface
