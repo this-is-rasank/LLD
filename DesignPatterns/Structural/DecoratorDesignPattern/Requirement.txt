@@ -1,0 +1,11 @@
+We need to add decorators on top of classes which enhance functionality, no matter what is added in which layer
+the logic is independent of the layer the decorator is in.
+
+Problem: The more the decorators are added, the more we will need to extend the class. If we create separate class
+for each permutation of layer, we will have large number of different classes. Example: Adding onion, paneer and jalapeno
+toppings on pizza, classes can be extended in multiple ways.
+
+To overcome this, and keep the logic independent we utilize the following solution.
+
+BaseClass <(is a)- decorator class -(has a)> BaseClass
+See, how it is implemented in the example.
