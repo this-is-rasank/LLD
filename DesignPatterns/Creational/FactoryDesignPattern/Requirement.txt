@@ -1,0 +1,4 @@
+We need to initialize objects for some has-a relationship to pass in a parent class.
+For places where we need to initialize this a lot of times, we will have a lot of redundant code without any logic aggregated at one place.
+
+To keep the logic(Buisness logic) of initializing has-a objects in a single place, factory pattern is used.

@@ -1,0 +1,2 @@
+Factory of a factory
+Returns a factory which returns the true object
