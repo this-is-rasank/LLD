@@ -1,0 +1,7 @@
+Used for:
+-Access Restriction
+-Caching
+-Pre and Post processing
+-Marshalling(Convert data into different format/ Add something in request) and Unmarshalling
+
+Can have multiple layers of proxys
